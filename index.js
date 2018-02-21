@@ -1,106 +1,106 @@
-var pic1_count = 0;
-var pic2_count = 0;
-var pic3_count = 0;
-var pic4_count = 0;
+var madagascarPic_count = 0;
+var honeyRoastedPic_count = 0;
+var almondPic_count = 0;
+var blueberryPic_count = 0;
 
-var pic1_time = 0;
-var pic2_time = 0;
-var pic3_time = 0;
-var pic4_time = 0;
+var madagascarPic_time = 0;
+var honeyRoastedPic_time = 0;
+var almondPic_time = 0;
+var blueberryPic_time = 0;
 
-var timer1Bool = 0
-var timer2Bool = 0
-var timer3Bool = 0
-var timer4Bool = 0
+var madagascarBool = 0
+var honeyRoastedBool = 0
+var almondBool = 0
+var blueberryBool = 0
 
 var interval = 1; //# of milliseconds per interval
 
-document.getElementById("pic1_count").innerHTML = pic1_count; //***
-document.getElementById("pic2_count").innerHTML = pic2_count;//***
-document.getElementById("pic3_count").innerHTML = pic3_count;//***
-document.getElementById("pic4_count").innerHTML = pic4_count;//***
+document.getElementById("madagascarPic_count").innerHTML = madagascarPic_count; //***
+document.getElementById("honeyRoastedPic_count").innerHTML = honeyRoastedPic_count;//***
+document.getElementById("almondPic_count").innerHTML = almondPic_count;//***
+document.getElementById("blueberryPic_count").innerHTML = blueberryPic_count;//***
 
-document.getElementById("pic1_time").innerHTML = pic1_count;//***
+document.getElementById("madagascarPic_time").innerHTML = madagascarPic_count;//***
 
-document.getElementById("pic1").addEventListener("mouseover", mouseOverPic1);
-document.getElementById("pic1").addEventListener("mouseout", mouseOutPic1);
+document.getElementById("madagascarPic").addEventListener("mouseover", mouseOvermadagascarPic);
+document.getElementById("madagascarPic").addEventListener("mouseout", mouseOutmadagascarPic);
 
-document.getElementById("pic2").addEventListener("mouseover", mouseOverPic2);
-document.getElementById("pic2").addEventListener("mouseout", mouseOutPic2);
+document.getElementById("honeyRoastedPic").addEventListener("mouseover", mouseOverhoneyRoastedPic);
+document.getElementById("honeyRoastedPic").addEventListener("mouseout", mouseOuthoneyRoastedPic);
 
-document.getElementById("pic3").addEventListener("mouseover", mouseOverPic3);
-document.getElementById("pic3").addEventListener("mouseout", mouseOutPic3);
+document.getElementById("almondPic").addEventListener("mouseover", mouseOveralmondPic);
+document.getElementById("almondPic").addEventListener("mouseout", mouseOutalmondPic);
 
-document.getElementById("pic4").addEventListener("mouseover", mouseOverPic4);
-document.getElementById("pic4").addEventListener("mouseout", mouseOutPic4);
+document.getElementById("blueberryPic").addEventListener("mouseover", mouseOverblueberryPic);
+document.getElementById("blueberryPic").addEventListener("mouseout", mouseOutblueberryPic);
 
-setInterval(timer1, interval);
-setInterval(timer2, interval);
-setInterval(timer3, interval);
-setInterval(timer4, interval);
+setInterval(madagascarTimer, interval);
+setInterval(honeyRoastedTimer, interval);
+setInterval(almondTimer, interval);
+setInterval(blueberryTimer, interval);
 
-function timer1() {
-  if (timer1Bool == 1)
+function madagascarTimer() {
+  if (madagascarBool == 1)
   {
-    pic1_time++;
+    madagascarPic_time++;
   }
 }
 
-function timer2() {
-  if (timer2Bool == 1)
-    pic2_time++;
+function honeyRoastedTimer() {
+  if (honeyRoastedBool == 1)
+    honeyRoastedPic_time++;
 }
 
-function timer3() {
-  if (timer3Bool == 1)
-    pic3_time++;
+function almondTimer() {
+  if (almondBool == 1)
+    almondPic_time++;
 }
 
-function timer4() {
-  if (timer4Bool == 1)
-    pic4_time++;
+function blueberryTimer() {
+  if (blueberryBool == 1)
+    blueberryPic_time++;
 }
 
-function mouseOverPic1() {
-  pic1_count++;
-  document.getElementById("pic1_count").innerHTML = pic1_count;//***
-  timer1Bool = 1;
+function mouseOvermadagascarPic() {
+  madagascarPic_count++;
+  document.getElementById("madagascarPic_count").innerHTML = madagascarPic_count;//***
+  madagascarBool = 1;
 }
 
-function mouseOutPic1() {
-  timer1Bool = 0
-  document.getElementById("pic1_time").innerHTML = pic1_time;//***
+function mouseOutmadagascarPic() {
+  madagascarBool = 0
+  document.getElementById("madagascarPic_time").innerHTML = madagascarPic_time;//***
 }
 
-function mouseOverPic2() {
-  pic2_count++;
-  document.getElementById("pic2_count").innerHTML = pic2_count;//***
-  timer2Bool = 1;
+function mouseOverhoneyRoastedPic() {
+  honeyRoastedPic_count++;
+  document.getElementById("honeyRoastedPic_count").innerHTML = honeyRoastedPic_count;//***
+  honeyRoastedBool = 1;
 }
 
-function mouseOutPic2() {
-  timer2Bool = 0
-  document.getElementById("pic2_time").innerHTML = pic2_time;//***
+function mouseOuthoneyRoastedPic() {
+  honeyRoastedBool = 0
+  document.getElementById("honeyRoastedPic_time").innerHTML = honeyRoastedPic_time;//***
 }
 
-function mouseOverPic3() {
-  pic3_count++;
-  document.getElementById("pic3_count").innerHTML = pic3_count;//***
-  timer3Bool = 1;
+function mouseOveralmondPic() {
+  almondPic_count++;
+  document.getElementById("almondPic_count").innerHTML = almondPic_count;//***
+  almondBool = 1;
 }
 
-function mouseOutPic3() {
-  timer3Bool = 0
-  document.getElementById("pic3_time").innerHTML = pic3_time;//***
+function mouseOutalmondPic() {
+  almondBool = 0
+  document.getElementById("almondPic_time").innerHTML = almondPic_time;//***
 }
 
-function mouseOverPic4() {
-  pic4_count++;
-  document.getElementById("pic4_count").innerHTML = pic4_count;//***
-  timer4Bool = 1;
+function mouseOverblueberryPic() {
+  blueberryPic_count++;
+  document.getElementById("blueberryPic_count").innerHTML = blueberryPic_count;//***
+  blueberryBool = 1;
 }
 
-function mouseOutPic4() {
-  timer4Bool = 0
-  document.getElementById("pic4_time").innerHTML = pic4_time;//***
+function mouseOutblueberryPic() {
+  blueberryBool = 0
+  document.getElementById("blueberryPic_time").innerHTML = blueberryPic_time;//***
 }
