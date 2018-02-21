@@ -13,6 +13,8 @@ var timer2Bool = 0
 var timer3Bool = 0
 var timer4Bool = 0
 
+var interval = 1; //# of milliseconds per interval
+
 document.getElementById("pic1_count").innerHTML = pic1_count; //***
 document.getElementById("pic2_count").innerHTML = pic2_count;//***
 document.getElementById("pic3_count").innerHTML = pic3_count;//***
@@ -32,10 +34,10 @@ document.getElementById("pic3").addEventListener("mouseout", mouseOutPic3);
 document.getElementById("pic4").addEventListener("mouseover", mouseOverPic4);
 document.getElementById("pic4").addEventListener("mouseout", mouseOutPic4);
 
-setInterval(timer1, 1000);
-setInterval(timer2, 1000);
-setInterval(timer3, 1000);
-setInterval(timer4, 1000);
+setInterval(timer1, interval);
+setInterval(timer2, interval);
+setInterval(timer3, interval);
+setInterval(timer4, interval);
 
 function timer1() {
   if (timer1Bool == 1)
