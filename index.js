@@ -3,10 +3,10 @@ var honeyRoastedPic_count = 0;
 var almondPic_count = 0;
 var blueberryPic_count = 0;
 
-var quad1_time = 0;
-var quad2_time = 0;
-var quad3_time = 0;
-var quad4_time = 0;
+var chocolatePic_time = 0;
+var honeyRoastedPic_time = 0;
+var almondPic_time = 0;
+var blueberryPic_time = 0;
 
 var quad1_count = 0;
 var quad2_count = 0;
@@ -88,6 +88,15 @@ document.getElementById("quad2_count").innerHTML = quad2_count;//***
 document.getElementById("quad3_count").innerHTML = quad3_count;//***
 document.getElementById("quad4_count").innerHTML = quad4_count;//***
 document.getElementById("quad1_time").innerHTML = quad1_time;//***
+
+var randArray = [0,1,2,3];
+
+for(var i = 5; i > 0; i--)
+{
+  var randNum = Math.floor(Math.random() * i);
+  randArray[i - 1] = randNum;
+}
+
 
 
 setInterval(quad1Timer, interval);
