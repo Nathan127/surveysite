@@ -1,6 +1,3 @@
-Qualtrics.SurveyEngine.addOnload(function()
-{
-	/*Place your JavaScript here to run when the page loads*/
 var chocolatePic_count = 0;
 var honeyRoastedPic_count = 0;
 var almondPic_count = 0;
@@ -44,9 +41,7 @@ setInterval(blueberryTimer, interval);
 
 function chocolateTimer() {
   if (chocolateBool == 1)
-  {
     chocolatePic_time++;
-  }
 }
 
 function honeyRoastedTimer() {
@@ -107,29 +102,3 @@ function mouseUpblueberryPic() {
   blueberryBool = 0
   document.getElementById("blueberryPic_time").innerHTML = blueberryPic_time;//***
 }
-
-	Qualtrics.SurveyEngine.addOnPageSubmit(function(type)
-{
-	if(type == "next")
-	{
-		Qualtrics.SurveyEngine.setEmbeddedData("chocolatePic_count", chocolatePic_count);
-  	Qualtrics.SurveyEngine.setEmbeddedData("honeyRoastedPic_count", honeyRoastedPic_count);
-  	Qualtrics.SurveyEngine.setEmbeddedData("almondPic_count", almondPic_count);
-		Qualtrics.SurveyEngine.setEmbeddedData("blueberryPic_count", blueberryPic_count);
-	  Qualtrics.SurveyEngine.setEmbeddedData("chocolatePic_time", chocolatePic_time);
-  	Qualtrics.SurveyEngine.setEmbeddedData("honeyRoastedPic_time", honeyRoastedPic_time);
-  	Qualtrics.SurveyEngine.setEmbeddedData("almondPic_time", almondPic_time);
-		Qualtrics.SurveyEngine.setEmbeddedData("blueberryPic_time", blueberryPic_time);
-	}
-});
-});
-
-Qualtrics.SurveyEngine.addOnReady(function()
-{
-	/*Place your JavaScript here to run when the page is fully displayed*/
-});
-
-Qualtrics.SurveyEngine.addOnUnload(function()
-{
-	/*Place your JavaScript here to run when the page is unloaded*/
-});
