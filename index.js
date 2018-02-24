@@ -1,23 +1,28 @@
+//Initialize Qualtrics counters
 var chocolatePic_count = 0;
 var honeyRoastedPic_count = 0;
 var almondPic_count = 0;
 var blueberryPic_count = 0;
 
+//Initialize Qualtrics timers
 var chocolatePic_time = 0;
 var honeyRoastedPic_time = 0;
 var almondPic_time = 0;
 var blueberryPic_time = 0;
 
+//Initialize quadrant counters
 var quad1_count = 0;
 var quad2_count = 0;
 var quad3_count = 0;
 var quad4_count = 0;
 
+//Initialize quadrant timers
 var quad1_time = 0;
 var quad2_time = 0;
 var quad3_time = 0;
 var quad4_time = 0;
 
+//Initialize quadrant bools for timers
 var quad1Bool = 0
 var quad2Bool = 0
 var quad3Bool = 0
@@ -25,26 +30,31 @@ var quad4Bool = 0
 
 var interval = 20; //# of milliseconds per interval
 
-var chocolateURL_up = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_bgvIrINID92Taeh";
-var honeyRoastedURL_up = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_bgvIrINID92Taeh";
-var almondURL_up = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_bgvIrINID92Taeh";
+//Declare URL for letting go of click
+var chocolateURL_up = "http://tamaskan-dog.com/Galleries/Puppy%20Gallery/Image%209.jpg";
+var honeyRoastedURL_up = "http://images4.fanpop.com/image/photos/16000000/Cute-Kitten-kittens-16096566-1280-800.jpg";
+var almondURL_up = "https://78.media.tumblr.com/8ecb1bf9e35eacf4565089cc9e1d7202/tumblr_neop8e3xjr1u01oxko1_1280.jpg";
 var blueberryURL_up = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_bgvIrINID92Taeh";
 
-var chocolateURL_down = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_bgvIrINID92Taeh";
-var honeyRoastedURL_down = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_bgvIrINID92Taeh";
-var almondURL_down = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_bgvIrINID92Taeh";
+//Declare URLS for clicking
+var chocolateURL_down = "http://www.tamaskan-dog.com/Galleries/Puppy%20Gallery/Image%208.jpg";
+var honeyRoastedURL_down = "http://images4.fanpop.com/image/photos/16100000/Cute-Kitten-kittens-16123151-1280-800.jpg";
+var almondURL_down = "http://weknowyourdreams.com/single/rabbit/rabbit-02";
 var blueberryURL_down = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_bgvIrINID92Taeh";
 
+//Declare URLS for img sources
 var chocolateURL_src = chocolateURL_up;
 var honeyRoastedURL_src = honeyRoastedURL_up;
 var almondURL_src = almondURL_up;
 var blueberryURL_src = blueberryURL_up;
 
+//Declare IDs
 var chocolateID = "chocolatePic";
 var honeyRoastedID = "honeyRoastedPic";
 var almondID = "almondPic";
 var blueberryID = "blueberryPic";
 
+//Declare Descriptions
 var chocolateDesc = "Kind Chocolate Vanilla Almond";
 var honeyRoastedDesc = "Kind Honey Roasted Nuts and Sea Salt";
 var almondDesc = "Kind Almond Coconut";
@@ -57,11 +67,7 @@ var srcArray = [chocolateURL_src, honeyRoastedURL_src, almondURL_src, blueberryU
 var idArray = [chocolateID, honeyRoastedID, almondID, blueberryID];
 var descArray = [chocolateDesc, honeyRoastedDesc, almondDesc, blueberryDesc];
 
-document.getElementById("quad1ID").innerHTML = idArray[0];//***
-document.getElementById("quad2ID").innerHTML = idArray[1];//***
-document.getElementById("quad3ID").innerHTML = idArray[2];//***
-document.getElementById("quad4ID").innerHTML = idArray[3];//***
-
+//Have the page watching for clicks and click releases
 document.getElementById("quad1ID").addEventListener("mousedown", mouseDownQuad1);
 document.getElementById("quad1ID").addEventListener("mouseup", mouseUpQuad1);
 document.getElementById("quad2ID").addEventListener("mousedown", mouseDownQuad2);
@@ -71,45 +77,43 @@ document.getElementById("quad3ID").addEventListener("mouseup", mouseUpQuad3);
 document.getElementById("quad4ID").addEventListener("mousedown", mouseDownQuad4);
 document.getElementById("quad4ID").addEventListener("mouseup", mouseUpQuad4);
 
-document.getElementById("quad1desc").innerHTML = descArray[0];
-document.getElementById("quad2desc").innerHTML = descArray[1];
-document.getElementById("quad3desc").innerHTML = descArray[2];
-document.getElementById("quad4desc").innerHTML = descArray[3];
+//Generate array of positions, then shuffle them
+var baseArray = [1,2,3,0];
+var randArray = shuffle(baseArray);
 
-/*document.getElementById("chocolatePic_count").innerHTML = chocolatePic_count; //***
-document.getElementById("honeyRoastedPic_count").innerHTML = honeyRoastedPic_count;//***
-document.getElementById("almondPic_count").innerHTML = almondPic_count;//***
-document.getElementById("blueberryPic_count").innerHTML = blueberryPic_count;//***
-document.getElementById("quad1_time").innerHTML = chocolatePic_count;//***
-*/
+function shuffle(o){ 
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
 
-document.getElementById("quad1_count").innerHTML = quad1_count; //***
-document.getElementById("quad2_count").innerHTML = quad2_count;//***
-document.getElementById("quad3_count").innerHTML = quad3_count;//***
-document.getElementById("quad4_count").innerHTML = quad4_count;//***
-document.getElementById("quad1_time").innerHTML = quad1_time;//***
+//Put the descriptions in shuffled position
+document.getElementById("quad1desc").innerHTML = descArray[randArray[0]];
+document.getElementById("quad2desc").innerHTML = descArray[randArray[1]];
+document.getElementById("quad3desc").innerHTML = descArray[randArray[2]];
+document.getElementById("quad4desc").innerHTML = descArray[randArray[3]];
 
-var randArray = [0,1,2,3];
+//Put the IDs in shuffled position
+document.getElementById("quad1ID").id = idArray[randArray[0]];
+document.getElementById("quad2ID").id = idArray[randArray[1]];
+document.getElementById("quad3ID").id = idArray[randArray[2]];
+document.getElementById("quad4ID").id = idArray[randArray[3]];
 
-for(var i = 5; i > 0; i--)
-{
-  var randNum = Math.floor(Math.random() * i);
-  randArray[i - 1] = randNum;
-}
+//Put the image sources in shuffled position
+document.quadOne.src = srcArray[randArray[0]]
+document.quadTwo.src = srcArray[randArray[1]]
+document.quadThree.src = srcArray[randArray[2]]
+document.quadFour.src = srcArray[randArray[3]]
 
-
-
+//Start timer functions with pre-set interval
 setInterval(quad1Timer, interval);
 setInterval(quad2Timer, interval);
 setInterval(quad3Timer, interval);
 setInterval(quad4Timer, interval);
 
+//If allowed to, keep track of timer
 function quad1Timer() {
   if (quad1Bool == 1)
-  {
     quad1_time++;
-    document.getElementById("quad1_time").innerHTML = quad1_time;
-  }
 }
 
 function quad2Timer() {
@@ -127,42 +131,63 @@ function quad4Timer() {
     quad4_time++;
 }
 
+//When quadrant one is clicked, add one to the count of the quadrant, start the timer, and change the image
 function mouseDownQuad1() {
   quad1_count++;
-  document.getElementById("quad1_count").innerHTML = quad1_count;
   quad1Bool = 1;
+  document.quadOne.src = mouseDownArray[randArray[0]]
 }
 
+//When quadrant one is released, stop the timer and change the image again.
 function mouseUpQuad1() {
   quad1Bool = 0
+  document.quadOne.src = mouseUpArray[randArray[0]]
 }
 
 function mouseDownQuad2() {
   quad2_count++;
-  document.getElementById("quad2_count").innerHTML = quad2_count;
   quad2Bool = 1;
+  document.quadTwo.src = mouseDownArray[randArray[1]]
 }
 
 function mouseUpQuad2() {
   quad2Bool = 0
+  document.quadTwo.src = mouseUpArray[randArray[1]]
 }
 
 function mouseDownQuad3() {
   quad3_count++;
-  document.getElementById("quad3_count").innerHTML = quad3_count;
   quad3Bool = 1;
+  document.quadThree.src = mouseDownArray[randArray[2]]
 }
 
 function mouseUpQuad3() {
   quad3Bool = 0
+  document.quadThree.src = mouseUpArray[randArray[2]]
 }
 
 function mouseDownQuad4() {
   quad4_count++;
-  document.getElementById("quad4_count").innerHTML = quad4_count;
   quad4Bool = 1;
+  document.quadFour.src = mouseDownArray[randArray[3]]
 }
 
 function mouseUpQuad4() {
   quad4Bool = 0
+  document.quadFour.src = mouseUpArray[randArray[3]]
 }
+
+//Put timer and counter values in arrays for easy access
+var timeArray = [quad1_time, quad2_time, quad3_time, quad4_time]
+var countArray = [quad1_count, quad2_count, quad3_count, quad4_count]
+
+//Take the quadrant data and put them in their appropriate qualtrics locations
+chocolatePic_count = countArray[randArray[0]];
+honeyRoastedPic_count = countArray[randArray[1]];
+almondPic_count = countArray[randArray[2]];
+blueberryPic_count = countArray[randArray[3]];
+
+chocolatePic_time = timeArray[randArray[0]];
+honeyRoastedPic_time = timeArray[randArray[1]];
+almondPic_time = timeArray[randArray[2]];
+blueberryPic_time = timeArray[randArray[3]];
