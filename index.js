@@ -200,16 +200,27 @@ console.log("update fired");
 var timeArray = [quad1_time, quad2_time, quad3_time, quad4_time]
 var countArray = [quad1_count, quad2_count, quad3_count, quad4_count]
 
-//Take the quadrant data and put them in their appropriate qualtrics locations
-chocolatePic_count = countArray[randArray[0]];
-honeyRoastedPic_count = countArray[randArray[1]];
-almondPic_count = countArray[randArray[2]];
-blueberryPic_count = countArray[randArray[3]];
+//Shuffle array to match other shuffled data
+	countArray[randArray[0]] = quad1_count;
+	countArray[randArray[1]] = quad2_count;
+	countArray[randArray[2]] = quad3_count;
+	countArray[randArray[3]] = quad4_count;
 
-chocolatePic_time = timeArray[randArray[0]];
-honeyRoastedPic_time = timeArray[randArray[1]];
-almondPic_time = timeArray[randArray[2]];
-blueberryPic_time = timeArray[randArray[3]];
+	timeArray[randArray[0]] = quad1_time;
+	timeArray[randArray[1]] = quad2_time;
+	timeArray[randArray[2]] = quad3_time;
+	timeArray[randArray[3]] = quad4_time;
+
+	//Take the quadrant data and put them in their appropriate qualtrics locations
+	chocolatePic_count = countArray[0];
+	honeyRoastedPic_count = countArray[1];
+	almondPic_count = countArray[2];
+	blueberryPic_count = countArray[3];
+
+	chocolatePic_time = timeArray[0];
+	honeyRoastedPic_time = timeArray[1];
+	almondPic_time = timeArray[2];
+	blueberryPic_time = timeArray[3];
 
 document.getElementById("chocolatePic_count").innerHTML = chocolatePic_count;
 document.getElementById("chocolatePic_time").innerHTML = chocolatePic_time;
@@ -238,32 +249,54 @@ Qualtrics.SurveyEngine.addOnPageSubmit(function(type)
 	var timeArray = [quad1_time, quad2_time, quad3_time, quad4_time]
 	var countArray = [quad1_count, quad2_count, quad3_count, quad4_count]
 
-	//Take the quadrant data and put them in their appropriate qualtrics locations
-	chocolatePic_count = countArray[randArray[0]];
-	honeyRoastedPic_count = countArray[randArray[1]];
-	almondPic_count = countArray[randArray[2]];
-	blueberryPic_count = countArray[randArray[3]];
+	//Shuffle array to match other shuffled data
+	countArray[randArray[0]] = quad1_count;
+	countArray[randArray[1]] = quad2_count;
+	countArray[randArray[2]] = quad3_count;
+	countArray[randArray[3]] = quad4_count;
 
-	chocolatePic_time = timeArray[randArray[0]];
-	honeyRoastedPic_time = timeArray[randArray[1]];
-	almondPic_time = timeArray[randArray[2]];
-	blueberryPic_time = timeArray[randArray[3]];
+	timeArray[randArray[0]] = quad1_time;
+	timeArray[randArray[1]] = quad2_time;
+	timeArray[randArray[2]] = quad3_time;
+	timeArray[randArray[3]] = quad4_time;
+
+	//Take the quadrant data and put them in their appropriate qualtrics locations
+	chocolatePic_count = countArray[0];
+	honeyRoastedPic_count = countArray[1];
+	almondPic_count = countArray[2];
+	blueberryPic_count = countArray[3];
+
+	chocolatePic_time = timeArray[0];
+	honeyRoastedPic_time = timeArray[1];
+	almondPic_time = timeArray[2];
+	blueberryPic_time = timeArray[3];
 	}
 	
 	//Put timer and counter values in arrays for easy access
 	var timeArray = [quad1_time, quad2_time, quad3_time, quad4_time]
 	var countArray = [quad1_count, quad2_count, quad3_count, quad4_count]
 
-	//Take the quadrant data and put them in their appropriate qualtrics locations
-	chocolatePic_count = countArray[randArray[0]];
-	honeyRoastedPic_count = countArray[randArray[1]];
-	almondPic_count = countArray[randArray[2]];
-	blueberryPic_count = countArray[randArray[3]];
+	//Shuffle array to match other shuffled data
+	countArray[randArray[0]] = quad1_count;
+	countArray[randArray[1]] = quad2_count;
+	countArray[randArray[2]] = quad3_count;
+	countArray[randArray[3]] = quad4_count;
 
-	chocolatePic_time = timeArray[randArray[0]];
-	honeyRoastedPic_time = timeArray[randArray[1]];
-	almondPic_time = timeArray[randArray[2]];
-	blueberryPic_time = timeArray[randArray[3]];
+	timeArray[randArray[0]] = quad1_time;
+	timeArray[randArray[1]] = quad2_time;
+	timeArray[randArray[2]] = quad3_time;
+	timeArray[randArray[3]] = quad4_time;
+
+	//Take the quadrant data and put them in their appropriate qualtrics locations
+	chocolatePic_count = countArray[0];
+	honeyRoastedPic_count = countArray[1];
+	almondPic_count = countArray[2];
+	blueberryPic_count = countArray[3];
+
+	chocolatePic_time = timeArray[0];
+	honeyRoastedPic_time = timeArray[1];
+	almondPic_time = timeArray[2];
+	blueberryPic_time = timeArray[3];
 });
 
 });
