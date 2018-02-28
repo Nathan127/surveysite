@@ -31,16 +31,17 @@ var quad4Bool = 0
 var interval = 20; //# of milliseconds per interval
 
 //Declare URL for letting go of click
-var chocolateURL_up = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_6sSViPp5Njze9ut";
-var honeyRoastedURL_up = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_eWHTYyUe9Z0bOn3";
-var almondURL_up = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_0eu8FOzTokZWnOJ";
-var blueberryURL_up = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_5AdNUQ0lGj2C5cp";
+//https://imgur.com/a/ztSBk
+var chocolateURL_up = "https://imgur.com/f1I9hI3.png";
+var honeyRoastedURL_up = "https://i.imgur.com/jFbQO0f.png";
+var almondURL_up = "https://i.imgur.com/VwrZ3ey.png";
+var blueberryURL_up = "https://imgur.com/DOVOJlH.png";
 
 //Declare URLS for clicking
-var chocolateURL_down = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_3w1PdWmf5oRzYMt";
-var honeyRoastedURL_down = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_3w1PdWmf5oRzYMt";
-var almondURL_down = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_3w1PdWmf5oRzYMt";
-var blueberryURL_down = "https://oregonstate.qualtrics.com/CP/Graphic.php?IM=IM_3w1PdWmf5oRzYMt";
+var chocolateURL_down = "https://imgur.com/0C49Ji0.png";
+var honeyRoastedURL_down = "https://imgur.com/OYRU2u8.png";
+var almondURL_down = "https://imgur.com/ZQn0GLw.png";
+var blueberryURL_down = "https://i.imgur.com/8TJ7KQP.png";
 
 //Declare URLS for img sources
 var chocolateURL_src = chocolateURL_up;
@@ -81,7 +82,7 @@ document.getElementById("quad4ID").addEventListener("mouseup", mouseUpQuad4);
 var baseArray = [1,2,3,0];
 var randArray = shuffle(baseArray);
 
-function shuffle(o){ 
+function shuffle(o){
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };
