@@ -82,7 +82,8 @@ document.getElementById("quad4ID").addEventListener("mouseup", mouseUpQuad4);
 var baseArray = [1,2,3,0];
 var randArray = shuffle(baseArray);
 
-function shuffle(o){
+function shuffle(o)
+{
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };
@@ -112,28 +113,33 @@ setInterval(quad3Timer, interval);
 setInterval(quad4Timer, interval);
 
 //If allowed to, keep track of timer
-function quad1Timer() {
+function quad1Timer()
+{
   if (quad1Bool == 1)
     quad1_time++;
 }
 
-function quad2Timer() {
+function quad2Timer()
+{
   if (quad2Bool == 1)
     quad2_time++;
 }
 
-function quad3Timer() {
+function quad3Timer()
+{
   if (quad3Bool == 1)
     quad3_time++;
 }
 
-function quad4Timer() {
+function quad4Timer()
+{
   if (quad4Bool == 1)
     quad4_time++;
 }
 
 //When quadrant one is clicked, add one to the count of the quadrant, start the timer, and change the image
-function mouseDownQuad1() {
+function mouseDownQuad1()
+{
   quad1_count++;
   quad1Bool = 1;
   document.quadOne.src = mouseDownArray[randArray[0]]
@@ -141,46 +147,53 @@ function mouseDownQuad1() {
 }
 
 //When quadrant one is released, stop the timer and change the image again.
-function mouseUpQuad1() {
+function mouseUpQuad1()
+{
   quad1Bool = 0
   document.quadOne.src = mouseUpArray[randArray[0]]
 	pageUpdate();
 }
 
-function mouseDownQuad2() {
+function mouseDownQuad2()
+{
   quad2_count++;
   quad2Bool = 1;
   document.quadTwo.src = mouseDownArray[randArray[1]]
   pageUpdate();
 }
 
-function mouseUpQuad2() {
+function mouseUpQuad2()
+{
   quad2Bool = 0
   document.quadTwo.src = mouseUpArray[randArray[1]]
   pageUpdate();
 }
 
-function mouseDownQuad3() {
+function mouseDownQuad3()
+{
   quad3_count++;
   quad3Bool = 1;
   document.quadThree.src = mouseDownArray[randArray[2]]
   pageUpdate();
 }
 
-function mouseUpQuad3() {
+function mouseUpQuad3()
+{
   quad3Bool = 0
   document.quadThree.src = mouseUpArray[randArray[2]]
   pageUpdate();
 }
 
-function mouseDownQuad4() {
+function mouseDownQuad4()
+{
   quad4_count++;
   quad4Bool = 1;
   document.quadFour.src = mouseDownArray[randArray[3]]
   pageUpdate();
 }
 
-function mouseUpQuad4() {
+function mouseUpQuad4()
+{
   quad4Bool = 0
   document.quadFour.src = mouseUpArray[randArray[3]]
   pageUpdate();
